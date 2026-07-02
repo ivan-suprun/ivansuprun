@@ -27,7 +27,8 @@
     /* mobile-only lock: every vw-based size below is written as calc(N * var(--vw) / 100)
        so it always resolves against a 430px-wide "phone", never the real desktop viewport */
     --frame-w:430px;
-    --vw:min(100vw,var(--frame-w));
+    --vw:calc(min(100vw,var(--frame-w)) * .94);
+    font-size:94%; /* global type-scale: shrinks every rem-based size (labels, body copy, clamp min/max) by the same ratio as --vw, so the whole page reads slightly smaller and more refined without changing any proportions */
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -241,7 +242,7 @@
     gap:1.5rem;padding:.65rem 0;
   }
   .prow + .prow{border-top:1px solid var(--line-faint)}
-  .prow-l{font-family:var(--sans);font-weight:300;font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft)}
+  .prow-l{font-family:var(--sans);font-weight:300;font-size:.78rem;letter-spacing:.06em;color:var(--ink-soft);text-transform:uppercase}
   .prow-r{text-align:right;flex-shrink:0}
   .prow .price{font-size:clamp(1.2rem,calc(5 * var(--vw) / 100),1.5rem)}
   .prow .price.sm{font-size:clamp(1rem,calc(4.2 * var(--vw) / 100),1.2rem)}
@@ -250,7 +251,7 @@
   /* single hero price */
   .phero{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
   .phero .price{font-size:clamp(1.5rem,calc(6 * var(--vw) / 100),1.85rem)}
-  .phero-sub{font-family:var(--sans);font-weight:300;font-size:.72rem;letter-spacing:.05em;color:var(--taupe);line-height:1.5}
+  .phero-sub{font-family:var(--sans);font-weight:300;font-size:.68rem;letter-spacing:.07em;color:var(--taupe);line-height:1.5;text-transform:uppercase}
 
   /* pull-line inside entry */
   .pull{
@@ -264,12 +265,13 @@
   .inc-label{margin:1.8rem 0 .3rem;color:var(--taupe)}
   .inc{list-style:none}
   .inc li{
-    font-family:var(--sans);font-weight:300;
-    font-size:.86rem;letter-spacing:.02em;color:var(--ink-soft);
+    font-family:var(--sans);font-weight:400;
+    font-size:.64rem;letter-spacing:.08em;color:var(--ink-soft);
+    text-transform:uppercase;
     padding:.72rem 0;border-bottom:1px solid var(--line-faint);
-    display:flex;gap:.85rem;line-height:1.45;
+    display:flex;gap:.85rem;line-height:1.6;
   }
-  .inc li::before{content:"—";color:var(--taupe);flex-shrink:0}
+  .inc li::before{content:"—";color:var(--oxblood);flex-shrink:0}
 
   .note{
     font-family:var(--sans);font-weight:300;font-size:.74rem;
@@ -843,7 +845,7 @@
 <section class="invite">
   <span class="label reveal">To begin</span>
   <span class="chapter-rule reveal"><span class="dot"></span></span>
-  <p class="invite-lead reveal">A short conversation first. Then we begin.</p>
+  <p class="invite-lead reveal">A short conversation first.<br>Then we begin.</p>
   <!-- Contact — Sonya (WhatsApp / Telegram) -->
   <div class="contact-card reveal">
     <span class="cc-label">Handled personally by</span>
@@ -854,7 +856,7 @@
       <a href="https://t.me/+380984110704" target="_blank" rel="noopener">Telegram</a>
     </p>
   </div>
-  <p class="invite-close reveal">A private service, for those who want results, not chaos.</p>
+  <p class="invite-close reveal">A private service, for those who want results,<br>not chaos.</p>
 </section>
 
 <div class="colophon">Ivan Suprun</div>

@@ -454,6 +454,67 @@
     max-width:26rem;margin:2.6rem auto 0;
     font-size:clamp(1.02rem,calc(4.1 * var(--vw) / 100),1.18rem);line-height:1.5;
   }
+
+  /* ---------- membership (private access) ---------- */
+  .access{padding:11vh 0 6vh}
+  .tier{
+    background:var(--greige);border:1px solid var(--line-faint);
+    max-width:30rem;margin:0 auto;text-align:center;
+    padding:clamp(2rem,6vw,2.6rem) clamp(1.4rem,5vw,2rem) clamp(2.2rem,6vw,2.8rem);
+  }
+  .tier + .tier{margin-top:2.4rem}
+  .tier-name{
+    font-family:var(--serif);text-transform:uppercase;font-weight:400;
+    font-size:clamp(1.6rem,calc(7 * var(--vw) / 100),2.1rem);
+    letter-spacing:.12em;color:var(--oxblood);line-height:1;text-indent:.12em;
+  }
+  .tier-price{
+    font-family:var(--serif);margin-top:1rem;color:var(--ink);
+    font-size:clamp(1.15rem,calc(4.8 * var(--vw) / 100),1.4rem);
+    font-feature-settings:var(--nums);
+  }
+  .tier-price span{
+    font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--taupe);
+  }
+  .tier-line{
+    font-style:italic;color:var(--taupe);margin:.9rem auto 0;
+    font-size:clamp(.98rem,calc(4 * var(--vw) / 100),1.1rem);line-height:1.5;max-width:22rem;
+  }
+  .tier-div{width:34px;height:1px;background:var(--oxblood);opacity:.45;margin:1.7rem auto .3rem}
+  .tier-label{
+    font-family:var(--sans);font-weight:500;font-size:.6rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--oxblood);margin:1.7rem 0 1rem;
+  }
+  .tier-list{list-style:none;margin:0 auto;max-width:25rem;padding:0}
+  .tier-list li{
+    font-weight:300;color:var(--ink-soft);
+    font-size:clamp(.92rem,calc(3.8 * var(--vw) / 100),1.02rem);line-height:1.5;padding:.55rem .4rem;
+  }
+  .tier-list li + li{border-top:1px solid var(--line-faint)}
+  .tier-list.muted li{color:var(--taupe)}
+  .tier-list b{color:var(--ink);font-weight:500;font-feature-settings:var(--nums)}
+
+  /* ---------- language toggle ---------- */
+  .lang{
+    position:fixed; top:0; left:50%;
+    transform:translateX(-50%);
+    width:100%; max-width:var(--frame-w);
+    z-index:60; pointer-events:none;
+    display:flex; justify-content:flex-end;
+    padding:.85rem calc(6 * var(--vw) / 100);
+  }
+  .lang-inner{
+    pointer-events:auto; display:flex; align-items:center; gap:.4rem;
+    font-family:var(--sans); font-weight:500; font-size:.56rem;
+    letter-spacing:.22em; text-transform:uppercase;
+  }
+  .lang a{ color:var(--taupe); text-decoration:none; transition:color .25s; }
+  .lang a:hover,.lang a:focus-visible{ color:var(--oxblood); }
+  .lang .on{ color:var(--oxblood); }
+  .lang .sep{ color:var(--line); }
+  /* keep the sticky index nav clear of the toggle in the corner */
+  .index-inner{ padding-right:calc(6 * var(--vw) / 100 + 3.1rem); }
 </style>
 </head>
 <body>
@@ -490,6 +551,15 @@
 <div class="site-frame">
 
 <!-- sticky chapter index -->
+<!-- ============ ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ============ -->
+<div class="lang">
+  <div class="lang-inner">
+    <a href="index.html" aria-label="English version">EN</a>
+    <span class="sep">/</span>
+    <span class="on">RU</span>
+  </div>
+</div>
+
 <nav class="index" id="index" aria-label="Guide chapters">
   <div class="index-inner">
     <span class="index-mark">Иван Супрун</span>
@@ -880,6 +950,65 @@
       </ul>
       <p class="pull">Это креативное направление, а не стандартный интерьерный дизайн.</p>
     </article>
+  </div>
+</section>
+
+<!-- ============ ЧЛЕНСТВО — ЧАСТНЫЙ ДОСТУП ============ -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-num">Постоянный формат</span>
+      <h2 class="chapter-title">Частный доступ</h2>
+      <span class="chapter-rule"><span class="dot"></span></span>
+      <p class="chapter-def">Отношения на постоянной основе. Доступ и стратегия включены; работа руками — по мере необходимости, по клубным ставкам.</p>
+    </div>
+
+    <div class="tier reveal">
+      <p class="tier-name">Полный доступ</p>
+      <p class="tier-price">£12,000 <span>/ месяц</span></p>
+      <p class="tier-line">Полная ответственность за то, как вас видят.</p>
+      <div class="tier-div"></div>
+      <p class="tier-label">Всё из «Доступа», и сверх того</p>
+      <ul class="tier-list">
+        <li>Постоянная приоритетная доступность — включая события в последний момент</li>
+        <li>Полный контроль над системой гардероба — выстроенной и поддерживаемой</li>
+        <li>Живой архив гардероба — Иван держит весь ваш гардероб в голове, поэтому каждая вещь и каждый образ опираются на то, что у вас уже есть. Вы ничего не отслеживаете — это делает он</li>
+        <li>Дистанционные сборы по запросу — присылаете момент, получаете готовое направление, где бы Иван ни был</li>
+        <li>Волосы, макияж и уход — под управлением, а не просто советом</li>
+        <li>Максимальные клубные ставки на все отдельные услуги</li>
+      </ul>
+      <p class="tier-label">Оплачивается отдельно, по особым клубным ставкам</p>
+      <ul class="tier-list muted">
+        <li>День шопинга — <b>£3,000</b> / день</li>
+        <li>Макияж и волосы — <b>£500</b></li>
+        <li>Разбор гардероба — от <b>£6,000</b> / 2 дня</li>
+        <li>Приобретения — мода, украшения, искусство</li>
+        <li>Поездки и расходы</li>
+      </ul>
+    </div>
+
+    <div class="tier reveal">
+      <p class="tier-name">Доступ</p>
+      <p class="tier-price">£6,000 <span>/ месяц</span></p>
+      <p class="tier-line">Глаз и суждение Ивана — на связи.</p>
+      <div class="tier-div"></div>
+      <p class="tier-label">Включено</p>
+      <ul class="tier-list">
+        <li>Постоянная коммуникация — покупки, образы и решения по мере их появления</li>
+        <li>Сезонная визуальная стратегия и планирование покупок</li>
+        <li>Контроль, подбор и рекомендации</li>
+        <li>Проверка вещей до того, как вы их купите</li>
+        <li>Приоритет в записи на все услуги «руками»</li>
+      </ul>
+      <p class="tier-label">Оплачивается отдельно, по клубным ставкам</p>
+      <ul class="tier-list muted">
+        <li>День шопинга — <b>£4,000</b> / день</li>
+        <li>Макияж и волосы — <b>£500</b></li>
+        <li>Разбор гардероба — от <b>£8,000</b> / 2 дня</li>
+        <li>Приобретения — мода, украшения, искусство</li>
+        <li>Поездки и расходы</li>
+      </ul>
+    </div>
   </div>
 </section>
 

@@ -454,6 +454,67 @@
     max-width:26rem;margin:2.6rem auto 0;
     font-size:clamp(1.02rem,calc(4.1 * var(--vw) / 100),1.18rem);line-height:1.5;
   }
+
+  /* ---------- membership (private access) ---------- */
+  .access{padding:11vh 0 6vh}
+  .tier{
+    background:var(--greige);border:1px solid var(--line-faint);
+    max-width:30rem;margin:0 auto;text-align:center;
+    padding:clamp(2rem,6vw,2.6rem) clamp(1.4rem,5vw,2rem) clamp(2.2rem,6vw,2.8rem);
+  }
+  .tier + .tier{margin-top:2.4rem}
+  .tier-name{
+    font-family:var(--serif);text-transform:uppercase;font-weight:400;
+    font-size:clamp(1.6rem,calc(7 * var(--vw) / 100),2.1rem);
+    letter-spacing:.12em;color:var(--oxblood);line-height:1;text-indent:.12em;
+  }
+  .tier-price{
+    font-family:var(--serif);margin-top:1rem;color:var(--ink);
+    font-size:clamp(1.15rem,calc(4.8 * var(--vw) / 100),1.4rem);
+    font-feature-settings:var(--nums);
+  }
+  .tier-price span{
+    font-family:var(--sans);font-size:.66rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--taupe);
+  }
+  .tier-line{
+    font-style:italic;color:var(--taupe);margin:.9rem auto 0;
+    font-size:clamp(.98rem,calc(4 * var(--vw) / 100),1.1rem);line-height:1.5;max-width:22rem;
+  }
+  .tier-div{width:34px;height:1px;background:var(--oxblood);opacity:.45;margin:1.7rem auto .3rem}
+  .tier-label{
+    font-family:var(--sans);font-weight:500;font-size:.6rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--oxblood);margin:1.7rem 0 1rem;
+  }
+  .tier-list{list-style:none;margin:0 auto;max-width:25rem;padding:0}
+  .tier-list li{
+    font-weight:300;color:var(--ink-soft);
+    font-size:clamp(.92rem,calc(3.8 * var(--vw) / 100),1.02rem);line-height:1.5;padding:.55rem .4rem;
+  }
+  .tier-list li + li{border-top:1px solid var(--line-faint)}
+  .tier-list.muted li{color:var(--taupe)}
+  .tier-list b{color:var(--ink);font-weight:500;font-feature-settings:var(--nums)}
+
+  /* ---------- language toggle ---------- */
+  .lang{
+    position:fixed; top:0; left:50%;
+    transform:translateX(-50%);
+    width:100%; max-width:var(--frame-w);
+    z-index:60; pointer-events:none;
+    display:flex; justify-content:flex-end;
+    padding:.85rem calc(6 * var(--vw) / 100);
+  }
+  .lang-inner{
+    pointer-events:auto; display:flex; align-items:center; gap:.4rem;
+    font-family:var(--sans); font-weight:500; font-size:.56rem;
+    letter-spacing:.22em; text-transform:uppercase;
+  }
+  .lang a{ color:var(--taupe); text-decoration:none; transition:color .25s; }
+  .lang a:hover,.lang a:focus-visible{ color:var(--oxblood); }
+  .lang .on{ color:var(--oxblood); }
+  .lang .sep{ color:var(--line); }
+  /* keep the sticky index nav clear of the toggle in the corner */
+  .index-inner{ padding-right:calc(6 * var(--vw) / 100 + 3.1rem); }
 </style>
 </head>
 <body>
@@ -490,6 +551,15 @@
 <div class="site-frame">
 
 <!-- sticky chapter index -->
+<!-- ============ LANGUAGE TOGGLE ============ -->
+<div class="lang">
+  <div class="lang-inner">
+    <span class="on">EN</span>
+    <span class="sep">/</span>
+    <a href="index-ru.html" aria-label="Русская версия">RU</a>
+  </div>
+</div>
+
 <nav class="index" id="index" aria-label="Guide chapters">
   <div class="index-inner">
     <span class="index-mark">Ivan Suprun</span>
@@ -880,6 +950,65 @@
       </ul>
       <p class="pull">This is creative direction, not standard interior design.</p>
     </article>
+  </div>
+</section>
+
+<!-- ============ MEMBERSHIP — PRIVATE ACCESS ============ -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="chapter-head reveal">
+      <span class="chapter-num">Membership</span>
+      <h2 class="chapter-title">Private Access</h2>
+      <span class="chapter-rule"><span class="dot"></span></span>
+      <p class="chapter-def">The relationship, retained. Counsel is included; hands-on work is booked as needed, at member rates.</p>
+    </div>
+
+    <div class="tier reveal">
+      <p class="tier-name">Full Access</p>
+      <p class="tier-price">£12,000 <span>/ month</span></p>
+      <p class="tier-line">Full responsibility for how you are seen.</p>
+      <div class="tier-div"></div>
+      <p class="tier-label">Everything in Access, and</p>
+      <ul class="tier-list">
+        <li>Standing, priority availability — including events at short notice</li>
+        <li>Full control of your wardrobe system — actively built and maintained</li>
+        <li>A living wardrobe archive — Ivan holds your whole wardrobe in mind, so every piece and every look builds on what you already own. You never track it — he does</li>
+        <li>Remote dressing on demand — send a moment, receive a complete direction, wherever Ivan is</li>
+        <li>Hair, make-up, and care — directed, not merely advised</li>
+        <li>The deepest member rates on all separate work</li>
+      </ul>
+      <p class="tier-label">Booked separately, at preferred rates</p>
+      <ul class="tier-list muted">
+        <li>Shopping day — <b>£3,000</b> / day</li>
+        <li>Make-up &amp; hair — <b>£500</b></li>
+        <li>Wardrobe audit — from <b>£6,000</b> / 2 days</li>
+        <li>Commissions — fashion, jewellery, art</li>
+        <li>Travel &amp; expenses</li>
+      </ul>
+    </div>
+
+    <div class="tier reveal">
+      <p class="tier-name">Access</p>
+      <p class="tier-price">£6,000 <span>/ month</span></p>
+      <p class="tier-line">Ivan's eye and judgment, on call.</p>
+      <div class="tier-div"></div>
+      <p class="tier-label">Included</p>
+      <ul class="tier-list">
+        <li>Ongoing communication — purchases, outfits, and decisions, answered as they arise</li>
+        <li>Seasonal visual strategy and purchase planning</li>
+        <li>Control, selections, and recommendations</li>
+        <li>Vetting of pieces before you commit</li>
+        <li>Priority booking on all hands-on work</li>
+      </ul>
+      <p class="tier-label">Booked separately, at member rates</p>
+      <ul class="tier-list muted">
+        <li>Shopping day — <b>£4,000</b> / day</li>
+        <li>Make-up &amp; hair — <b>£500</b></li>
+        <li>Wardrobe audit — from <b>£8,000</b> / 2 days</li>
+        <li>Commissions — fashion, jewellery, art</li>
+        <li>Travel &amp; expenses</li>
+      </ul>
+    </div>
   </div>
 </section>
 

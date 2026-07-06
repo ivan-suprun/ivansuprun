@@ -513,8 +513,10 @@
   .lang a:hover,.lang a:focus-visible{ color:var(--oxblood); }
   .lang .on{ color:var(--oxblood); }
   .lang .sep{ color:var(--line); }
-  /* keep the sticky index nav clear of the toggle in the corner */
-  .index-inner{ padding-right:calc(6 * var(--vw) / 100 + 3.1rem); }
+  /* keep the sticky index nav clear of the toggle in the corner
+     (3.1rem under-measured the EN/RU toggle's real rendered width, so
+     the last nav link overlapped it — 5rem leaves a real gap) */
+  .index-inner{ padding-right:calc(6 * var(--vw) / 100 + 5rem); }
 </style>
 </head>
 <body>

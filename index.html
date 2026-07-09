@@ -513,10 +513,8 @@
   .lang a:hover,.lang a:focus-visible{ color:var(--oxblood); }
   .lang .on{ color:var(--oxblood); }
   .lang .sep{ color:var(--line); }
-  /* keep the sticky index nav clear of the toggle in the corner
-     (3.1rem under-measured the EN/RU toggle's real rendered width, so
-     the last nav link overlapped it — 5rem leaves a real gap) */
-  .index-inner{ padding-right:calc(6 * var(--vw) / 100 + 5rem); }
+  /* keep the sticky index nav clear of the toggle in the corner */
+  .index-inner{ padding-right:calc(6 * var(--vw) / 100 + 3.1rem); }
 </style>
 </head>
 <body>
@@ -536,7 +534,7 @@
   • ЦЕНЫ: нажми Ctrl+F (⌘+F) и найди символ £ — так найдёшь все цены подряд.
 
   • КОНТАКТЫ (WhatsApp / Telegram): найди «wa.me» и «t.me» — там номер/ссылка.
-    Имя контакта — найди слово «Sonya».
+    Имя контакта — найди слово «Sofiia».
 
   • ФОТО: найди «class="portrait» — внутри стоит <img ...> с фотографией
     (она вшита в файл). Чтобы заменить — вставь свой <img src="...">.
@@ -914,7 +912,7 @@
       <span class="entry-num">X.</span>
       <h3 class="entry-name">Event Curation — Celebration &amp; Wedding</h3>
       <div class="phero">
-        <span class="price">£5,000</span>
+        <span class="price">from £5,000</span>
         <span class="phero-sub">per day · plus expenses and event budget</span>
       </div>
       <p class="label inc-label">Includes</p>
@@ -935,11 +933,11 @@
       <h3 class="entry-name">Interior Curation</h3>
       <div class="prow">
         <span class="prow-l">Project</span>
-        <span class="prow-r"><span class="price sm">£5,000</span></span>
+        <span class="prow-r"><span class="price sm">from £5,000</span></span>
       </div>
       <div class="prow">
         <span class="prow-l">Curated interior shopping</span>
-        <span class="prow-r"><span class="price sm">£5,000 / day</span></span>
+        <span class="prow-r"><span class="price sm">from £5,000 / day</span></span>
       </div>
       <p class="label inc-label">Includes</p>
       <ul class="inc">
@@ -1050,7 +1048,7 @@
   <!-- Contact — Sonya (WhatsApp / Telegram) -->
   <div class="contact-card reveal">
     <span class="cc-label">Enquiries handled personally by</span>
-    <p class="cc-name">Sonya</p>
+    <p class="cc-name">Sofiia</p>
     <p class="cc-role">Private client relations</p>
     <p class="cc-links">
       <a href="https://wa.me/380984110704" target="_blank" rel="noopener">WhatsApp</a>

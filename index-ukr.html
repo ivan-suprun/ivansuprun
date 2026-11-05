@@ -321,6 +321,8 @@
     font-family:var(--sans);font-weight:300;font-size:.8rem;letter-spacing:.03em;
     color:var(--ink-soft);padding:.6rem 0;border-bottom:1px solid var(--line-faint);line-height:1.5;
   }
+  .prac-list li.prac-lead{border-bottom:none;padding-bottom:.15rem}
+  .prac-list li.prac-opt{padding-left:1.1rem}
   .prac-note{font-style:italic;color:var(--taupe);font-family:var(--serif);font-size:1rem;margin-top:1.1rem;line-height:1.5}
 
   /* ---------- VI. INVITATION ---------- */
@@ -1077,10 +1079,11 @@
       <div class="prac-block reveal">
         <span class="label">Умови</span>
         <ul class="prac-list">
-          <li>Під час бронювання вноситься передоплата 50%</li>
-          <li>У разі скасування не пізніше ніж за 24 години передоплата не повертається</li>
-          <li>У разі перенесення дати сплачується повна вартість</li>
-          <li>У разі скасування менш ніж за 24 години сплачується повна вартість</li>
+          <li>50% передоплати під час бронювання послуги</li>
+          <li class="prac-lead">У разі скасування не пізніше ніж за 24 години — два варіанти:</li>
+          <li class="prac-opt">без перенесення — клієнт сплачує 50% вартості послуги, послуга не надається</li>
+          <li class="prac-opt">з перенесенням дати — клієнт сплачує 100% вартості послуги, послуга надається в нову дату</li>
+          <li>У разі скасування менш ніж за 24 години сплачується 100% вартості послуги</li>
           <li>Вихідні та свята за запитом</li>
           <li>Банківські збори та ПДВ на рахунок клієнта</li>
         </ul>

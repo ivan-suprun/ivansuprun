@@ -321,6 +321,8 @@
     font-family:var(--sans);font-weight:300;font-size:.8rem;letter-spacing:.03em;
     color:var(--ink-soft);padding:.6rem 0;border-bottom:1px solid var(--line-faint);line-height:1.5;
   }
+  .prac-list li.prac-lead{border-bottom:none;padding-bottom:.15rem}
+  .prac-list li.prac-opt{padding-left:1.1rem}
   .prac-note{font-style:italic;color:var(--taupe);font-family:var(--serif);font-size:1rem;margin-top:1.1rem;line-height:1.5}
 
   /* ---------- VI. INVITATION ---------- */
@@ -1074,10 +1076,11 @@
       <div class="prac-block reveal">
         <span class="label">Условия</span>
         <ul class="prac-list">
-          <li>При бронировании вносится предоплата 50%</li>
-          <li>При отмене не позднее чем за 24 часа предоплата не возвращается</li>
-          <li>При переносе даты оплачивается полная стоимость</li>
-          <li>При отмене менее чем за 24 часа оплачивается полная стоимость</li>
+          <li>50% предоплаты при бронировании услуги</li>
+          <li class="prac-lead">При отмене не позднее чем за 24 часа — два варианта:</li>
+          <li class="prac-opt">без переноса — клиент оплачивает 50% стоимости услуги, услуга не оказывается</li>
+          <li class="prac-opt">с переносом даты — клиент оплачивает 100% стоимости услуги, услуга оказывается в новую дату</li>
+          <li>При отмене менее чем за 24 часа оплачивается 100% стоимости услуги</li>
           <li>Выходные и праздники по запросу</li>
           <li>Банковские сборы и НДС на счёт клиента</li>
         </ul>
